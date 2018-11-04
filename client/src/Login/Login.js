@@ -21,12 +21,14 @@ export default class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
         this.setState({ submitted: true });
         const { username, password } = this.state;
 
-        accountService.login(username, password).then(()=>{
-            this.props.history.push('/dashboard')
+        if (!username || !password)
+            return;
+
+        accountService.login(username, password).then(() => {
+            this.props.history.push('/admin/dashboard')
         });
     }
 
