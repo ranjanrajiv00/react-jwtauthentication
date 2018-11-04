@@ -1,0 +1,22 @@
+{
+  "name": "edis.api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
+    "mongoose": "^4.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
