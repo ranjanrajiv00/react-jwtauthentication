@@ -11,32 +11,30 @@ export default class AdminLayout extends Component {
     }
     logout = () => {
         accountService.logout();
-        this.props.history.push('/')
+        this.props.history.push('/login')
     }
     render() {
         return (
-            <Router>
-                <div className="container">
-                    <div className="col-sm-12">
-                        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                            <div className="navbar-header">
-                                <a className="navbar-brand" href="#">App</a>
-                            </div>
-                            <ul className="navbar-nav mr-auto">
-                                <li className="nav-item"><Link to='/admin/dashboard' className="nav-link">Dashboard</Link></li>
-                                <li className="nav-item"><Link to='/admin/artifactory' className="nav-link">Artifactory</Link></li>
-                            </ul>
-                            <ul className="navbar-nav navbar-right">
-                                <li className="nav-item"><a href='#' className="nav-link" onClick={() => { this.logout() }}>Logout</a></li>
-                            </ul>
-                        </nav>
-                        <div>
-                            <ProtectedRoute path="/admin/dashboard" exact component={Dashboard} />
-                            <ProtectedRoute path="/admin/artifactory" component={Artifactory} />
+            <div className="container">
+                <div className="col-sm-12">
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <div className="navbar-header">
+                            <a className="navbar-brand" href="#">App</a>
                         </div>
+                        <ul className="navbar-nav mr-auto">
+                            <li className="nav-item"><Link to='/admin/dashboard' className="nav-link">Dashboard</Link></li>
+                            <li className="nav-item"><Link to='/admin/artifactory' className="nav-link">Artifactory</Link></li>
+                        </ul>
+                        <ul className="navbar-nav navbar-right">
+                            <li className="nav-item"><button className="nav-link" onClick={() => { this.logout() }}>Logout</button></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <ProtectedRoute path="/admin/dashboard" exact component={Dashboard} />
+                        <ProtectedRoute path="/admin/artifactory" component={Artifactory} />
                     </div>
                 </div>
-            </Router>
+            </div>
         );
     }
 }
