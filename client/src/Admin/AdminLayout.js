@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { ProtectedRoute } from '../Shared/ProtectedRoute';
-import Artifactory from '../Artifactory/Artifactory';
+import Artifactory from './Artifactory/Artifactory';
 import { accountService } from '../Login/Account.Services';
-import Login from '../Login/Login';
 const Dashboard = () => <h2>Dashboard</h2>;
 
 export default class AdminLayout extends Component {
@@ -32,7 +31,6 @@ export default class AdminLayout extends Component {
                             </ul>
                         </nav>
                         <div>
-                            <Route path="/" exact component={Login} />
                             <ProtectedRoute path="/admin/dashboard" exact component={Dashboard} />
                             <ProtectedRoute path="/admin/artifactory" component={Artifactory} />
                         </div>

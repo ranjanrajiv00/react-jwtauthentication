@@ -1,4 +1,4 @@
-import { authHeader } from '../Helpers/utility';
+import { authHeader } from '../../Helpers/utility';
 export const artifactoryService = {
     get
 };
